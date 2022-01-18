@@ -1,8 +1,57 @@
 article {
-  width: 100%;
+  width: 50%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  margin-bottom: 30px;
+  border-radius: 8px;
   padding-bottom: 20px;
 }
 
-.articlePhoto {
+.counter-divAP {
+  width: 8%;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.article-contentAP {
+  width: 92%;
+}
+
+.IcoSubjectAP {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.headerAP {
+  display: flex;
+  margin-top: 20px;
+}
+
+.subjectAP {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-style: italic;
+  margin-right: 5px;
+  font-size: 11pt;
+}
+
+.counterAP {
+  margin-top: -1px;
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+
+.articlePhotoAP {
+  width: 100%;
   margin-bottom: 30px;
+}
+
+.video-divAP {
+  width: 100%;
+  height: 400px;
 }
