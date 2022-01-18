@@ -1,0 +1,73 @@
+article {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+.counter-div {
+  width: 8%;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.article-content {
+  width: 92%;
+}
+
+.IcoSubject {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.header {
+  display: flex;
+  margin-top: 20px;
+}
+
+.subject {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-style: italic;
+  margin-right: 5px;
+  font-size: 11pt;
+}
+
+h3 {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: normal;
+  margin-right: 5px;
+  font-size: 10pt;
+}
+
+.counter {
+  margin-top: -1px;
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.articlePhoto {
+  width: 100%;
+}
+
+.video-div {
+  width: 100%;
+  height: 400px;
+}
+iframe {
+  width: 100%;
+  height: 400px;
+}
