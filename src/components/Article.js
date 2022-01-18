@@ -41,8 +41,10 @@ const Article = () => {
         <div className="article-content">
           <div className="header">
             <img className="IcoSubject" src={IcoSubject} alt="icosubject" />
-            <h2 className="subject">r/Baking</h2>
-            <h3>• posted by u/Sparklypenwhore • 13 days ago</h3>
+            <div className="redditInformation">
+              <h2 className="subject">r/Baking</h2>
+              <h3>• posted by u/Sparklypenwhore • 13 days ago</h3>
+            </div>
           </div>
           <h2>
             Finally perfected my chocolate cake recipe! And living my best

@@ -31,6 +31,15 @@ article {
   margin-top: 20px;
 }
 
+.header h2 {
+  margin-bottom: -10px;
+}
+
+.redditInformation {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .subject {
   font-family: 'Roboto';
   font-weight: bold;
@@ -64,10 +73,17 @@ h2 {
 }
 
 .video-div {
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  height: 400px;
+  padding-top: 56.25%;
 }
 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
-  height: 400px;
+  height: 100%;
 }

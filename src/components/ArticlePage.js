@@ -6,7 +6,7 @@ import Comment from './Comment';
 
 const ArticlePage = () => {
   return (
-    <article>
+    <div className="articlePage">
       <div className="counter-divAP">
         {/* arrow up */}
         <svg
@@ -57,7 +57,7 @@ const ArticlePage = () => {
         </div>
         <h3 className="scoresAP">upvotes: 25 • commants: 12 • awards: 5</h3>
       </div>
-    </article>
+    </div>
   );
 };
 
