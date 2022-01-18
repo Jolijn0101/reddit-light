@@ -21,15 +21,16 @@ nav img {
 }
 
 form {
-  padding-top: 12px;
+  height: 65px;
   width: 100%;
   display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 button {
-  margin-left: 20%;
   height: 37px;
-  width: 5%;
+  width: 40px;
   border-radius: 5px 0px 0px 5px;
   border-style: none;
   background-color: rgb(235, 232, 232);
@@ -38,7 +39,6 @@ button {
 input {
   height: 35px;
   width: 55%;
-  margin-right: 20%;
   border-style: none;
   border-radius: 0px 5px 5px 0px;
   background-color: rgb(235, 232, 232);
