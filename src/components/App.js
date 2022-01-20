@@ -6,7 +6,7 @@ import ArticlePage from './ArticlePage';
 import { useState } from 'react';
 
 function App() {
-  const [clicked, setclicked] = useState(false);
+  const [clicked, setclicked] = useState(true);
 
   return (
     <div className="App">

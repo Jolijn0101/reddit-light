@@ -42,8 +42,10 @@ const ArticlePage = () => {
         <h3>← Back to reddits page</h3>
         <div className="headerAP">
           <img className="IcoSubjectAP" src={IcoSubject} alt="icosubject" />
-          <h2 className="subjectAP">r/Baking</h2>
-          <h3>• posted by u/Sparklypenwhore • 13 days ago</h3>
+          <div className="redditInformation">
+            <h2 className="subjectAP">r/Baking</h2>
+            <h3>• posted by u/Sparklypenwhore • 13 days ago</h3>
+          </div>
         </div>
         <h2>
           Finally perfected my chocolate cake recipe! And living my best
