@@ -6,8 +6,8 @@ import ArticlePage from './ArticlePage';
 import { useState } from 'react';
 
 function App() {
-  const [term, setTerm] = useState('');
-  const [clicked, setclicked] = useState(true);
+  const [term, setTerm] = useState('Search on Reddit');
+  const [clicked, setclicked] = useState(false);
   const submitHandler = (e) => {
     e.preventDefault();
     if (term === '') return alert('Please enter search term!');
