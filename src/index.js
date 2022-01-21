@@ -2,13 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './components/App';
+import ArticlePage from './components/ArticlePage';
+import Articles from './components/Articles';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<App />}>
+          <Route path="articles" element={<Articles />} />
+          <Route path="articlepage" element={<ArticlePage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

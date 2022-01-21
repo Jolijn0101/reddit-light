@@ -4,10 +4,11 @@ import Articles from './Articles';
 import SubReddit from './SubReddit';
 import ArticlePage from './ArticlePage';
 import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   const [term, setTerm] = useState('Search on Reddit');
-  const [clicked, setclicked] = useState(true);
+  const [clicked, setclicked] = useState(false);
   const submitHandler = (e) => {
     e.preventDefault();
     if (term === '') return alert('Please enter search term!');
@@ -44,7 +45,8 @@ function App() {
         </form>
       </nav>
       <main>
-        {clicked ? <ArticlePage /> : <Articles />}
+        <Outlet />
+        {/*{clicked ? <ArticlePage /> : <Articles />}*/}
         <SubReddit />
       </main>
     </div>

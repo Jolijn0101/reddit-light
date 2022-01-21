@@ -5,6 +5,7 @@ import CakePhoto from '../images/3zv7yahmtj981.jpg';
 import Comment from './Comment';
 import FaRegArrowAltCircleUp from '../images/arrowUp';
 import FaRegArrowAltCircleDown from '../images/arrowDown';
+import { Link } from 'react-router-dom';
 
 const ArticlePage = () => {
   return (
@@ -17,7 +18,9 @@ const ArticlePage = () => {
         <FaRegArrowAltCircleDown className="arrow-down" />
       </div>
       <div className="article-contentAP">
-        <h3>← Back to reddits page</h3>
+        <Link to="/articles">
+          <h3>← Back to reddits page</h3>
+        </Link>
         <div className="headerAP">
           <img className="IcoSubjectAP" src={IcoSubject} alt="icosubject" />
           <div className="redditInformation">
