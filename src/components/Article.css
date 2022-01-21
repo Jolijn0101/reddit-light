@@ -57,8 +57,7 @@ h3 {
 }
 
 .counter {
-  margin-top: -1px;
-  margin-bottom: 3px;
+  margin: 8px;
   font-weight: bold;
 }
 

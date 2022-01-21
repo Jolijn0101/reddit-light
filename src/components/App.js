@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 function App() {
   const [term, setTerm] = useState('Search on Reddit');
-  const [clicked, setclicked] = useState(false);
+  const [clicked, setclicked] = useState(true);
   const submitHandler = (e) => {
     e.preventDefault();
     if (term === '') return alert('Please enter search term!');
@@ -26,8 +26,8 @@ function App() {
               fill="currentColor"
               strokeWidth="0"
               viewBox="0 0 16 16"
-              height="1.3em"
-              width="1.3em"
+              height="1.2em"
+              width="1.2em"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
