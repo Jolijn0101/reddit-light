@@ -20,7 +20,7 @@ article {
 }
 
 a {
-  width: 92%;
+  width: calc(100% - 8% - 20px);
 }
 
 .IcoSubject {

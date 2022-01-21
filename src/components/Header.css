@@ -1,0 +1,42 @@
+nav {
+  background-color: white;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+nav img {
+  padding-left: 20px;
+  width: 120px;
+  background-color: white;
+}
+
+form {
+  height: 50px;
+  width: calc(100% - 140px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  height: 32px;
+  width: 40px;
+  border-radius: 5px 0px 0px 5px;
+  border-style: none;
+  background-color: rgb(235, 232, 232);
+}
+
+input {
+  height: 30px;
+  width: 55%;
+  border-style: none;
+  border-radius: 0px 5px 5px 0px;
+  background-color: rgb(235, 232, 232);
+}
+
+input:focus {
+  outline: none;
+}
