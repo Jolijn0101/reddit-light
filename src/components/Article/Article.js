@@ -1,10 +1,10 @@
 import React from 'react';
 import './Article.css';
-import IcoSubject from '../images/IcoSubject.png';
-import CakePhoto from '../images/3zv7yahmtj981.jpg';
+import IcoSubject from '../../images/IcoSubject.png';
+import CakePhoto from '../../images/3zv7yahmtj981.jpg';
 import { useState } from 'react/cjs/react.development';
-import FaRegArrowAltCircleUp from '../images/arrowUp';
-import FaRegArrowAltCircleDown from '../images/arrowDown';
+import FaRegArrowAltCircleUp from '../../images/arrowUp';
+import FaRegArrowAltCircleDown from '../../images/arrowDown';
 import { Link } from 'react-router-dom';
 
 const Article = () => {

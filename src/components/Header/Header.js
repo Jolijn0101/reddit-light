@@ -1,5 +1,5 @@
 import React from 'react';
-import reddit_light_logo from '../images/reddit_light_logo.png';
+import reddit_light_logo from '../../images/reddit_light_logo.png';
 import { useState } from 'react';
 import './Header.css';
 
