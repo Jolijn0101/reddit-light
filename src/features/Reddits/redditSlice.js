@@ -10,7 +10,7 @@ export const fetchAsyncReddits = createAsyncThunk(
 );
 
 const initialState = {
-  reddits: {},
+  reddits: false,
   selectedReddit: {},
   loading: false,
 };
