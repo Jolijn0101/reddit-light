@@ -14,3 +14,10 @@ export const getSubreddits = async () => {
 
   return json.data.children.map((subreddit) => subreddit.data);
 };
+
+export const getSearchReddits = async (searchterm) => {
+  const response = await fetch(`${API_ROOT}/search.json?q=${searchterm}`);
+  const json = await response.json();
+
+  return json.data.children.map((reddit) => reddit.data);
+};

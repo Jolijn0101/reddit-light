@@ -1,6 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getSubredditPosts } from '../../api/reddit';
-import { getSubreddits } from '../../api/reddit';
+import {
+  getSubredditPosts,
+  getSubreddits,
+  getSearchReddits,
+} from '../../api/reddit';
 
 export const fetchAsyncReddits = createAsyncThunk(
   'reddits/fetchAsyncReddits',
@@ -18,12 +21,20 @@ export const fetchAsyncSubReddits = createAsyncThunk(
   }
 );
 
+export const fetchAsyncSearchReddits = createAsyncThunk(
+  'reddits/fetchAsyncSearchReddits',
+  async (searchterm) => {
+    const searchResults = await getSearchReddits(searchterm);
+    return searchResults;
+  }
+);
+
 const initialState = {
-  reddits: false,
+  reddits: false, //komt een array met reddits
   selectedReddit: {},
   redditsLoading: false,
 
-  subreddits: false,
+  subreddits: false, // komt een array met subreddits
   subRedditsLoading: false,
 };
 
@@ -61,6 +72,18 @@ const redditSlice = createSlice({
       return { ...state, subreddits: action.payload, subRedditsLoading: false };
     },
     [fetchAsyncSubReddits.rejected]: () => {
+      console.log('rejected');
+    },
+    // search reddits
+    [fetchAsyncSearchReddits.pending]: (state) => {
+      console.log('Pending');
+      return { ...state, redditsLoading: true };
+    },
+    [fetchAsyncSearchReddits.fulfilled]: (state, action) => {
+      console.log('Fetched Successfully');
+      return { ...state, reddits: action.payload, redditsLoading: false };
+    },
+    [fetchAsyncSearchReddits.rejected]: () => {
       console.log('rejected');
     },
   },

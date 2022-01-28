@@ -2,15 +2,20 @@ import React from 'react';
 import reddit_light_logo from '../../images/reddit_light_logo.png';
 import { useState } from 'react';
 import './Header.css';
+import { useDispatch } from 'react-redux';
+import { fetchAsyncSearchReddits } from '../../features/Reddits/redditSlice';
 
 const Header = () => {
   const [term, setTerm] = useState('Search on Reddit');
+  const dispatch = useDispatch();
+
   const submitHandler = (e) => {
     e.preventDefault();
     if (term === '') return alert('Please enter search term!');
-    console.log(term);
+    dispatch(fetchAsyncSearchReddits(term));
     setTerm('');
   };
+
   return (
     <nav>
       <img src={reddit_light_logo} alt="reddit_light_logo" />
