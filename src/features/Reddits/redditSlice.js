@@ -1,18 +1,31 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getSubredditPosts } from '../../api/reddit';
+import { getSubreddits } from '../../api/reddit';
 
 export const fetchAsyncReddits = createAsyncThunk(
   'reddits/fetchAsyncReddits',
-  async (subreddit) => {
-    const posts = await getSubredditPosts(subreddit);
+  async (reddit) => {
+    const posts = await getSubredditPosts(reddit);
     return posts;
+  }
+);
+
+export const fetchAsyncSubReddits = createAsyncThunk(
+  'reddits/fetchAsyncSubReddits',
+  async (subreddit) => {
+    const subreddits = await getSubreddits(subreddit);
+    console.log(subreddits);
+    return subreddits;
   }
 );
 
 const initialState = {
   reddits: false,
   selectedReddit: {},
-  loading: false,
+  redditsLoading: false,
+
+  subreddits: false,
+  subRedditsLoading: false,
 };
 
 const redditSlice = createSlice({
@@ -27,22 +40,41 @@ const redditSlice = createSlice({
     },
   },
   extraReducers: {
+    // reddits
     [fetchAsyncReddits.pending]: (state) => {
       console.log('Pending');
-      return { ...state, loading: true };
+      return { ...state, redditsLoading: true };
     },
     [fetchAsyncReddits.fulfilled]: (state, action) => {
       console.log('Fetched Successfully');
-      return { ...state, reddits: action.payload, loading: false };
+      return { ...state, reddits: action.payload, redditsLoading: false };
     },
     [fetchAsyncReddits.rejected]: () => {
+      console.log('rejected');
+    },
+    // subreddits
+    [fetchAsyncSubReddits.pending]: (state) => {
+      console.log('Pending');
+      return { ...state, subRedditsLoading: true };
+    },
+    [fetchAsyncSubReddits.fulfilled]: (state, action) => {
+      console.log('Fetched Successfully');
+      return { ...state, subreddits: action.payload, subRedditsLoading: false };
+    },
+    [fetchAsyncSubReddits.rejected]: () => {
       console.log('rejected');
     },
   },
 });
 
+//export reddits
 export const { removeSelectedReddit, firstConsolelock } = redditSlice.actions;
 export const getAllReddits = (state) => state.reddits.reddits;
-export const getLoading = (state) => state.reddits.loading;
+export const getRedditLoading = (state) => state.reddits.redditsLoading;
 export const getSelectedReddit = (state) => state.reddits.selectedReddit;
+
+//export subreddits
+export const getSubReddits = (state) => state.reddits.subreddits;
+export const getSubLoading = (state) => state.reddits.subRedditsLoading;
+
 export default redditSlice.reducer;

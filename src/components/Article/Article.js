@@ -8,7 +8,6 @@ import { validateNum, getTime } from '../../features/data_functions';
 
 const Article = (props) => {
   const data = props.data;
-  console.log(data);
   const likes = validateNum(data.score);
   const comments = validateNum(data.num_comments);
   const Time = getTime(data.created);

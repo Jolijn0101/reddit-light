@@ -5,7 +5,10 @@ import Articles from '../Articles/Articles';
 import Header from '../Header/Header';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { fetchAsyncReddits } from '../../features/Reddits/redditSlice';
+import {
+  fetchAsyncReddits,
+  fetchAsyncSubReddits,
+} from '../../features/Reddits/redditSlice';
 import { useEffect } from 'react';
 
 function App() {
@@ -14,6 +17,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchAsyncReddits(redditText));
+    dispatch(fetchAsyncSubReddits());
   }, [dispatch]);
 
   return (
