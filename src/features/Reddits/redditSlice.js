@@ -14,7 +14,6 @@ export const fetchAsyncSubReddits = createAsyncThunk(
   'reddits/fetchAsyncSubReddits',
   async (subreddit) => {
     const subreddits = await getSubreddits(subreddit);
-    console.log(subreddits);
     return subreddits;
   }
 );
