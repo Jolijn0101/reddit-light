@@ -27,7 +27,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Articles />} />
-            <Route path="articlepage" element={<ArticlePage />} />
+            <Route path=":ArticleTitle" element={<ArticlePage />} />
           </Routes>
         </BrowserRouter>
         <SubReddit />

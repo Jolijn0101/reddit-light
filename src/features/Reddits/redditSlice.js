@@ -52,6 +52,9 @@ const redditSlice = createSlice({
   name: 'reddits',
   initialState,
   reducers: {
+    setSelectedReddit: (state, action) => {
+      state.selectedReddit = action.payload;
+    },
     removeSelectedReddit: (state) => {
       state.selectedReddit = {};
     },
@@ -120,5 +123,8 @@ export const getSelectedReddit = (state) => state.reddits.selectedReddit;
 //export subreddits
 export const getSubReddits = (state) => state.reddits.subreddits;
 export const getSubLoading = (state) => state.reddits.subRedditsLoading;
+
+//export selected reddit
+export const { setSelectedReddit } = redditSlice.actions;
 
 export default redditSlice.reducer;

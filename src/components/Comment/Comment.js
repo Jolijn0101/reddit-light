@@ -5,7 +5,10 @@ const Comment = () => {
   return (
     <div className="comment">
       <div className="title">
-        <img src={user} alt="" />
+        <img
+          src="https://www.redditstatic.com/avatars/defaults/v2/avatar_default_1.png"
+          alt=""
+        />
         <h3>MeinStern</h3>
         <h4>• 13d ago</h4>
       </div>

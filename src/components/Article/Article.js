@@ -5,10 +5,14 @@ import FaRegArrowAltCircleUp from '../../images/arrowUp';
 import FaRegArrowAltCircleDown from '../../images/arrowDown';
 import { Link } from 'react-router-dom';
 import { validateNum, getTime } from '../../features/data_functions';
-import { useSelector } from 'react-redux';
-import { getSubReddits } from '../../features/Reddits/redditSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  getSubReddits,
+  setSelectedReddit,
+} from '../../features/Reddits/redditSlice';
 
 const Article = (props) => {
+  const dispatch = useDispatch();
   const data = props.data;
   const likes = validateNum(data.score);
   const comments = validateNum(data.num_comments);
@@ -46,8 +50,11 @@ const Article = (props) => {
           {/* arrow down */}
           <FaRegArrowAltCircleDown className="arrow-down" />
         </div>
-        <Link to="/articlepage">
-          <div className="article-content">
+        <Link to={'articleID:' + data.id}>
+          <div
+            className="article-content"
+            onClick={() => dispatch(setSelectedReddit(data))}
+          >
             <div className="header">
               <img className="IcoSubject" src={getIco()} alt="icosubject" />
               <div className="redditInformation">
