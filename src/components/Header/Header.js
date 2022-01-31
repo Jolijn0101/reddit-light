@@ -3,7 +3,10 @@ import reddit_light_logo from '../../images/reddit_light_logo.png';
 import { useState } from 'react';
 import './Header.css';
 import { useDispatch } from 'react-redux';
-import { fetchAsyncSearchReddits } from '../../features/Reddits/redditSlice';
+import {
+  fetchAsyncSearchReddits,
+  fetchAsyncReddits,
+} from '../../features/Reddits/redditSlice';
 
 const Header = () => {
   const [term, setTerm] = useState('Search on Reddit');
@@ -18,7 +21,11 @@ const Header = () => {
 
   return (
     <nav>
-      <img src={reddit_light_logo} alt="reddit_light_logo" />
+      <img
+        src={reddit_light_logo}
+        alt="reddit_light_logo"
+        onClick={() => dispatch(fetchAsyncReddits('popular'))}
+      />
       <form onSubmit={submitHandler}>
         <button>
           <svg
