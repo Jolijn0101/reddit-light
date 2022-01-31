@@ -1,10 +1,9 @@
 import React from 'react';
 import './Article.css';
-import redditlogo from '../../images/reddit-logo-16.png';
 import FaRegArrowAltCircleUp from '../../images/arrowUp';
 import FaRegArrowAltCircleDown from '../../images/arrowDown';
 import { Link } from 'react-router-dom';
-import { validateNum, getTime } from '../../features/data_functions';
+import { validateNum, getTime, getIco } from '../../features/data_functions';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   getSubReddits,
@@ -18,27 +17,6 @@ const Article = (props) => {
   const comments = validateNum(data.num_comments);
   const Time = getTime(data.created);
   const subreddits = useSelector(getSubReddits);
-
-  // get ico for reddit
-  const getIco = () => {
-    const name = data.subreddit;
-    const subredditNameArray = [];
-    subreddits.map((subreddit) => {
-      return subredditNameArray.push(subreddit.display_name);
-    });
-    const indexIco = subredditNameArray.findIndex(
-      (subreddit) => subreddit === name
-    );
-    if (indexIco > -1) {
-      if (subreddits[indexIco].icon_img) {
-        return subreddits[indexIco].icon_img;
-      } else {
-        return redditlogo;
-      }
-    } else {
-      return redditlogo;
-    }
-  };
 
   return (
     <>
@@ -56,7 +34,11 @@ const Article = (props) => {
             onClick={() => dispatch(setSelectedReddit(data))}
           >
             <div className="header">
-              <img className="IcoSubject" src={getIco()} alt="icosubject" />
+              <img
+                className="IcoSubject"
+                src={getIco(data, subreddits)}
+                alt="icosubject"
+              />
               <div className="redditInformation">
                 <h2 className="subject">{data.subreddit_name_prefixed}</h2>
                 <h3>

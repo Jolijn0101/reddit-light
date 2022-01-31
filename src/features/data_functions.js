@@ -1,3 +1,5 @@
+import redditlogo from '../images/reddit-logo-16.png';
+
 export const validateNum = (number) => {
   if (number > 999999) {
     const likes = number.toString();
@@ -29,5 +31,26 @@ export const getTime = (time) => {
       return hours + ' hour ago';
     }
     return hours + ' hours ago';
+  }
+};
+
+// get ico for reddit
+export const getIco = (data, subreddits) => {
+  const name = data.subreddit;
+  const subredditNameArray = [];
+  subreddits.map((subreddit) => {
+    return subredditNameArray.push(subreddit.display_name);
+  });
+  const indexIco = subredditNameArray.findIndex(
+    (subreddit) => subreddit === name
+  );
+  if (indexIco > -1) {
+    if (subreddits[indexIco].icon_img) {
+      return subreddits[indexIco].icon_img;
+    } else {
+      return redditlogo;
+    }
+  } else {
+    return redditlogo;
   }
 };
