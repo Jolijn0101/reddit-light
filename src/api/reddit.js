@@ -1,6 +1,6 @@
 export const API_ROOT = 'https://www.reddit.com';
 
-export const getSubredditPosts = async (reddit) => {
+export const getPopularPosts = async (reddit) => {
   const searchterm = `/r/${reddit}`;
   const response = await fetch(`${API_ROOT}${searchterm}.json`);
   const json = await response.json();
@@ -20,4 +20,13 @@ export const getSearchReddits = async (searchterm) => {
   const json = await response.json();
 
   return json.data.children.map((reddit) => reddit.data);
+};
+
+export const getSubredditPosts = async (subredditTitle) => {
+  const response = await fetch(`${API_ROOT}/r/${subredditTitle}.json`);
+  const json = await response.json();
+  const data = json.data.children.map((reddit) => reddit.data);
+  data.shift();
+
+  return data;
 };

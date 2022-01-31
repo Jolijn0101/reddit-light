@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import {
+  getPopularPosts,
   getSubredditPosts,
   getSubreddits,
   getSearchReddits,
@@ -8,7 +9,7 @@ import {
 export const fetchAsyncReddits = createAsyncThunk(
   'reddits/fetchAsyncReddits',
   async (reddit) => {
-    const posts = await getSubredditPosts(reddit);
+    const posts = await getPopularPosts(reddit);
     return posts;
   }
 );
@@ -26,6 +27,15 @@ export const fetchAsyncSearchReddits = createAsyncThunk(
   async (searchterm) => {
     const searchResults = await getSearchReddits(searchterm);
     return searchResults;
+  }
+);
+
+//alleen de asyncThunk is aangemaakt
+export const fetchAsyncSubRedditPosts = createAsyncThunk(
+  'reddits/fetchAsyncSubRedditPosts',
+  async (subreddit) => {
+    const subredditPosts = await getSubredditPosts(subreddit);
+    return subredditPosts;
   }
 );
 
@@ -84,6 +94,18 @@ const redditSlice = createSlice({
       return { ...state, reddits: action.payload, redditsLoading: false };
     },
     [fetchAsyncSearchReddits.rejected]: () => {
+      console.log('rejected');
+    },
+    // SubRedditPosts
+    [fetchAsyncSubRedditPosts.pending]: (state) => {
+      console.log('Pending');
+      return { ...state, redditsLoading: true };
+    },
+    [fetchAsyncSubRedditPosts.fulfilled]: (state, action) => {
+      console.log('Fetched Successfully');
+      return { ...state, reddits: action.payload, redditsLoading: false };
+    },
+    [fetchAsyncSubRedditPosts.rejected]: () => {
       console.log('rejected');
     },
   },

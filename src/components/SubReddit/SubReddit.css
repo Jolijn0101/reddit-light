@@ -40,6 +40,10 @@ p {
   margin-bottom: 30px;
 }
 
+.subReddit:hover {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 425px) {
   aside {
     width: 90%;

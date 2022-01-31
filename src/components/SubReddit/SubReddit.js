@@ -1,10 +1,14 @@
 import React from 'react';
 import './SubReddit.css';
-import { useSelector } from 'react-redux';
-import { getSubReddits } from '../../features/Reddits/redditSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  getSubReddits,
+  fetchAsyncSubRedditPosts,
+} from '../../features/Reddits/redditSlice';
 import redditlogo from '../../images/reddit-logo-16.png';
 
 const SubReddit = () => {
+  const dispatch = useDispatch();
   const subreddits = useSelector(getSubReddits);
   return (
     <aside>
@@ -13,7 +17,13 @@ const SubReddit = () => {
       {subreddits ? (
         subreddits.map((subReddit, index) => {
           return (
-            <div className="subReddit" key={index}>
+            <div
+              className="subReddit"
+              key={index}
+              onClick={() =>
+                dispatch(fetchAsyncSubRedditPosts(subReddit.display_name))
+              }
+            >
               {subReddit.icon_img ? (
                 <img
                   className="icon"
