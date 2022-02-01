@@ -11,7 +11,11 @@ const Comment = () => {
     <div className="comments">
       {data ? (
         data.map((comment, index) => {
-          if (comment.author && comment.author !== 'AutoModerator') {
+          if (
+            comment.author &&
+            comment.author !== 'AutoModerator' &&
+            comment.author !== 'unexBot'
+          ) {
             const number = Math.floor(Math.random() * 8);
             const avatar = `https://www.redditstatic.com/avatars/defaults/v2/avatar_default_${number}.png`;
             const Time = getTime(comment.created);

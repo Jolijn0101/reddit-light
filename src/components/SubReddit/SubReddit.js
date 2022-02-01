@@ -1,20 +1,29 @@
 import React from 'react';
 import './SubReddit.css';
+import '../../animations/loadingAnimation.css';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   getSubReddits,
   fetchAsyncSubRedditPosts,
+  getSubLoading,
 } from '../../features/Reddits/redditSlice';
 import redditlogo from '../../images/reddit-logo-16.png';
 
 const SubReddit = () => {
   const dispatch = useDispatch();
   const subreddits = useSelector(getSubReddits);
+  const subLoading = useSelector(getSubLoading);
   return (
     <aside>
       <h1>SubReddit</h1>
       <p>Discover more subjects on Reddit!</p>
-      {subreddits ? (
+      {subLoading || !subreddits ? (
+        <div class="loader">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      ) : (
         subreddits.map((subReddit, index) => {
           return (
             <div
@@ -42,8 +51,6 @@ const SubReddit = () => {
             </div>
           );
         })
-      ) : (
-        <h1>No subreddits available</h1>
       )}
     </aside>
   );

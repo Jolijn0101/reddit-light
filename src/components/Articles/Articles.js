@@ -1,5 +1,6 @@
 import React from 'react';
 import './Articles.css';
+import '../../animations/loadingAnimation.css';
 import Article from '../Article/Article';
 import { useSelector } from 'react-redux';
 import { getAllReddits } from '../../features/Reddits/redditSlice';
@@ -13,8 +14,10 @@ const Articles = () => {
           return <Article key={index} data={reddit} />;
         })
       ) : (
-        <div className="reddits-error">
-          <h3>{reddits.Error}</h3>
+        <div class="loader">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       )}
     </div>
