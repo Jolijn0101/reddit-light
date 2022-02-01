@@ -3,7 +3,7 @@ import SubReddit from '../SubReddit/SubReddit';
 import ArticlePage from '../ArticlePage/ArticlePage';
 import Articles from '../Articles/Articles';
 import Header from '../Header/Header';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {
   fetchAsyncReddits,
@@ -21,18 +21,16 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="App">
+    <Router>
       <Header />
       <main>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Articles />} />
-            <Route path=":ArticleTitle" element={<ArticlePage />} />
-          </Routes>
-        </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Articles />} />
+          <Route path=":ArticleTitle" element={<ArticlePage />} />
+        </Routes>
         <SubReddit />
       </main>
-    </div>
+    </Router>
   );
 }
 

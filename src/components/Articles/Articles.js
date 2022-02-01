@@ -14,7 +14,7 @@ const Articles = () => {
           return <Article key={index} data={reddit} />;
         })
       ) : (
-        <div class="loader">
+        <div className="loader">
           <span></span>
           <span></span>
           <span></span>

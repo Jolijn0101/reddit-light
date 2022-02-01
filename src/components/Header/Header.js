@@ -7,16 +7,19 @@ import {
   fetchAsyncSearchReddits,
   fetchAsyncReddits,
 } from '../../features/Reddits/redditSlice';
+import { useNavigate } from 'react-router';
 
 const Header = () => {
   const [term, setTerm] = useState('Search on Reddit');
   const dispatch = useDispatch();
+  let navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
     if (term === '') return alert('Please enter search term!');
     dispatch(fetchAsyncSearchReddits(term));
     setTerm('');
+    navigate('/');
   };
 
   return (

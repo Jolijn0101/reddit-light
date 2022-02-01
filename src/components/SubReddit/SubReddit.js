@@ -18,7 +18,7 @@ const SubReddit = () => {
       <h1>SubReddit</h1>
       <p>Discover more subjects on Reddit!</p>
       {subLoading || !subreddits ? (
-        <div class="loader">
+        <div className="loader">
           <span></span>
           <span></span>
           <span></span>
