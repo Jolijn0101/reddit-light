@@ -57,8 +57,11 @@
 }
 
 .video-divAP {
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  height: 400px;
+  padding-top: 56.25%;
+  margin-bottom: 30px;
 }
 
 @media only screen and (max-width: 558px) {

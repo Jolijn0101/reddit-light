@@ -30,7 +30,6 @@ export const fetchAsyncSearchReddits = createAsyncThunk(
   }
 );
 
-//alleen de asyncThunk is aangemaakt
 export const fetchAsyncSubRedditPosts = createAsyncThunk(
   'reddits/fetchAsyncSubRedditPosts',
   async (subreddit) => {
