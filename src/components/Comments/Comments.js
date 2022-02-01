@@ -14,7 +14,9 @@ const Comment = () => {
           if (
             comment.author &&
             comment.author !== 'AutoModerator' &&
-            comment.author !== 'unexBot'
+            comment.author !== 'unexBot' &&
+            comment.author !== '[deleted]' &&
+            comment.author !== 'LSFmoderator'
           ) {
             const number = Math.floor(Math.random() * 8);
             const avatar = `https://www.redditstatic.com/avatars/defaults/v2/avatar_default_${number}.png`;
