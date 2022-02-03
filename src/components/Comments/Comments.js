@@ -6,7 +6,7 @@ import {
   getCommentsLoading,
 } from '../../features/Reddits/commentSlice';
 import { useSelector } from 'react-redux';
-import { getTime } from '../../features/data_functions';
+import { getTime } from '../../utils/data_functions';
 
 const Comment = () => {
   const data = useSelector(getComments);

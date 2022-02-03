@@ -1,5 +1,4 @@
 import redditlogo from '../images/reddit-logo-16.png';
-
 export const validateNum = (number) => {
   if (number > 999999) {
     const likes = number.toString();

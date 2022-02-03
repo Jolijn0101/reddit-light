@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
 import './ArticlePage.css';
-import { getIco } from '../../features/data_functions';
 import Comments from '../Comments/Comments';
 import FaRegArrowAltCircleUp from '../../images/arrowUp';
 import FaRegArrowAltCircleDown from '../../images/arrowDown';
-import { validateNum, getTime } from '../../features/data_functions';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -12,6 +10,7 @@ import {
   getSubReddits,
 } from '../../features/Reddits/redditSlice';
 import { fetchAsynccomments } from '../../features/Reddits/commentSlice';
+import { validateNum, getTime, getIco } from '../../utils/data_functions';
 
 const ArticlePage = () => {
   const data = useSelector(getSelectedReddit);
