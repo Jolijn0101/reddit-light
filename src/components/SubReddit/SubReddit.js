@@ -7,7 +7,7 @@ import {
   getSubReddits,
   fetchAsyncSubRedditPosts,
   getSubLoading,
-} from '../../features/Reddits/redditSlice';
+} from '../../store/Reddits/redditSlice';
 import redditlogo from '../../images/reddit-logo-16.png';
 
 const SubReddit = () => {

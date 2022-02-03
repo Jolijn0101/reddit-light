@@ -8,8 +8,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   getSelectedReddit,
   getSubReddits,
-} from '../../features/Reddits/redditSlice';
-import { fetchAsynccomments } from '../../features/Reddits/commentSlice';
+} from '../../store/Reddits/redditSlice';
+import { fetchAsynccomments } from '../../store/Reddits/commentSlice';
 import { validateNum, getTime, getIco } from '../../utils/data_functions';
 
 const ArticlePage = () => {

@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   getSubReddits,
   setSelectedReddit,
-} from '../../features/Reddits/redditSlice';
+} from '../../store/Reddits/redditSlice';
 
 const Article = (props) => {
   const dispatch = useDispatch();

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import {
   getAllReddits,
   getRedditLoading,
-} from '../../features/Reddits/redditSlice';
+} from '../../store/Reddits/redditSlice';
 
 const Articles = () => {
   const reddits = useSelector(getAllReddits);

@@ -4,7 +4,7 @@ import '../../animations/loadingAnimation.css';
 import {
   getComments,
   getCommentsLoading,
-} from '../../features/Reddits/commentSlice';
+} from '../../store/Reddits/commentSlice';
 import { useSelector } from 'react-redux';
 import { getTime } from '../../utils/data_functions';
 

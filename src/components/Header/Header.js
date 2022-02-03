@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import {
   fetchAsyncSearchReddits,
   fetchAsyncReddits,
-} from '../../features/Reddits/redditSlice';
+} from '../../store/Reddits/redditSlice';
 import { useNavigate } from 'react-router';
 
 const Header = () => {
