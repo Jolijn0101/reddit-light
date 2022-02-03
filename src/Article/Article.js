@@ -1,14 +1,11 @@
 import React from 'react';
 import './Article.css';
-import FaRegArrowAltCircleUp from '../../images/arrowUp';
-import FaRegArrowAltCircleDown from '../../images/arrowDown';
+import FaRegArrowAltCircleUp from '../images/arrowUp';
+import FaRegArrowAltCircleDown from '../images/arrowDown';
 import { Link } from 'react-router-dom';
-import { validateNum, getTime, getIco } from '../../utils/data_functions';
+import { validateNum, getTime, getIco } from '../utils/data_functions';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  getSubReddits,
-  setSelectedReddit,
-} from '../../store/Reddits/redditSlice';
+import { getSubReddits, setSelectedReddit } from '../store/Reddits/redditSlice';
 
 const Article = (props) => {
   const dispatch = useDispatch();

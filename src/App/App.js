@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import {
   fetchAsyncReddits,
   fetchAsyncSubReddits,
-} from '../../store/Reddits/redditSlice';
+} from '../store/Reddits/redditSlice';
 import { useEffect } from 'react';
 
 function App() {

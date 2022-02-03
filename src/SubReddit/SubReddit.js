@@ -1,14 +1,14 @@
 import React from 'react';
 import './SubReddit.css';
-import '../../animations/loadingAnimation.css';
+import '../animations/loadingAnimation.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import {
   getSubReddits,
   fetchAsyncSubRedditPosts,
   getSubLoading,
-} from '../../store/Reddits/redditSlice';
-import redditlogo from '../../images/reddit-logo-16.png';
+} from '../store/Reddits/redditSlice';
+import redditlogo from '../images/reddit-logo-16.png';
 
 const SubReddit = () => {
   const dispatch = useDispatch();

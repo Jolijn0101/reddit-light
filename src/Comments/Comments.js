@@ -1,12 +1,9 @@
 import React from 'react';
 import './Comments.css';
-import '../../animations/loadingAnimation.css';
-import {
-  getComments,
-  getCommentsLoading,
-} from '../../store/Reddits/commentSlice';
+import '../animations/loadingAnimation.css';
+import { getComments, getCommentsLoading } from '../store/Reddits/commentSlice';
 import { useSelector } from 'react-redux';
-import { getTime } from '../../utils/data_functions';
+import { getTime } from '../utils/data_functions';
 
 const Comment = () => {
   const data = useSelector(getComments);

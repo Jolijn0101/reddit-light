@@ -1,12 +1,12 @@
 import React from 'react';
-import reddit_light_logo from '../../images/reddit_light_logo.png';
+import reddit_light_logo from '../images/reddit_light_logo.png';
 import { useState } from 'react';
 import './Header.css';
 import { useDispatch } from 'react-redux';
 import {
   fetchAsyncSearchReddits,
   fetchAsyncReddits,
-} from '../../store/Reddits/redditSlice';
+} from '../store/Reddits/redditSlice';
 import { useNavigate } from 'react-router';
 
 const Header = () => {

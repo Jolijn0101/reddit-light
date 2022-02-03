@@ -1,12 +1,9 @@
 import React from 'react';
 import './Articles.css';
-import '../../animations/loadingAnimation.css';
+import '../animations/loadingAnimation.css';
 import Article from '../Article/Article';
 import { useSelector } from 'react-redux';
-import {
-  getAllReddits,
-  getRedditLoading,
-} from '../../store/Reddits/redditSlice';
+import { getAllReddits, getRedditLoading } from '../store/Reddits/redditSlice';
 
 const Articles = () => {
   const reddits = useSelector(getAllReddits);

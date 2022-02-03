@@ -36,5 +36,3 @@ export const getPostComments = async (permalink) => {
   const json = await response.json();
   return json[1].data.children.map((subreddit) => subreddit.data);
 };
-
-///r/nextfuckinglevel/comments/sgv8ju/of_course_this_dude_is_not_human/
