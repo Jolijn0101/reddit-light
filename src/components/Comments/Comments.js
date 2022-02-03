@@ -1,15 +1,19 @@
 import React from 'react';
 import './Comments.css';
-import { getComments } from '../../features/Reddits/commentSlice';
+import '../../animations/loadingAnimation.css';
+import {
+  getComments,
+  getCommentsLoading,
+} from '../../features/Reddits/commentSlice';
 import { useSelector } from 'react-redux';
 import { getTime } from '../../features/data_functions';
 
 const Comment = () => {
   const data = useSelector(getComments);
-
+  const loading = useSelector(getCommentsLoading);
   return (
     <div className="comments">
-      {data ? (
+      {data && loading === false ? (
         data.map((comment, index) => {
           if (
             comment.author &&
@@ -38,8 +42,10 @@ const Comment = () => {
           }
         })
       ) : (
-        <div className="reddits-error">
-          <h3>{data.Error}</h3>
+        <div className="loader">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       )}
     </div>

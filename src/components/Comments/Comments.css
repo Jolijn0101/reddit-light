@@ -28,6 +28,7 @@ h4 {
 .comment p {
   line-height: 16pt;
   margin-left: 20px;
+  word-wrap: break-word;
 }
 
 .comment {

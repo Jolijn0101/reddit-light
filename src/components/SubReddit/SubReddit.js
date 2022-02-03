@@ -2,6 +2,7 @@ import React from 'react';
 import './SubReddit.css';
 import '../../animations/loadingAnimation.css';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
 import {
   getSubReddits,
   fetchAsyncSubRedditPosts,
@@ -13,6 +14,7 @@ const SubReddit = () => {
   const dispatch = useDispatch();
   const subreddits = useSelector(getSubReddits);
   const subLoading = useSelector(getSubLoading);
+  let navigate = useNavigate();
   return (
     <aside>
       <h1>SubReddit</h1>
@@ -29,9 +31,10 @@ const SubReddit = () => {
             <div
               className="subReddit"
               key={index}
-              onClick={() =>
-                dispatch(fetchAsyncSubRedditPosts(subReddit.display_name))
-              }
+              onClick={() => {
+                dispatch(fetchAsyncSubRedditPosts(subReddit.display_name));
+                navigate('/');
+              }}
             >
               {subReddit.icon_img ? (
                 <img

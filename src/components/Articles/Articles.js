@@ -3,13 +3,17 @@ import './Articles.css';
 import '../../animations/loadingAnimation.css';
 import Article from '../Article/Article';
 import { useSelector } from 'react-redux';
-import { getAllReddits } from '../../features/Reddits/redditSlice';
+import {
+  getAllReddits,
+  getRedditLoading,
+} from '../../features/Reddits/redditSlice';
 
 const Articles = () => {
   const reddits = useSelector(getAllReddits);
+  const loading = useSelector(getRedditLoading);
   return (
     <div id="articles">
-      {reddits ? (
+      {reddits && !loading ? (
         reddits.map((reddit, index) => {
           return <Article key={index} data={reddit} />;
         })

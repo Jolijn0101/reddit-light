@@ -69,6 +69,7 @@ h2 {
   font-family: 'Roboto';
   font-weight: bold;
   margin-right: 20px;
+  word-wrap: break-word;
 }
 
 .articlePhoto {
