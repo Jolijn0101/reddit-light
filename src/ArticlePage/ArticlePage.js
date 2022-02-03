@@ -5,8 +5,9 @@ import FaRegArrowAltCircleUp from '../images/arrowUp';
 import FaRegArrowAltCircleDown from '../images/arrowDown';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { getSelectedReddit, getSubReddits } from '../store/Reddits/redditSlice';
-import { fetchAsynccomments } from '../store/Reddits/commentSlice';
+import { getSelectedReddit } from '../store/redditSlice';
+import { getSubReddits } from '../store/subredditSlice';
+import { fetchAsynccomments } from '../store/commentSlice';
 import { validateNum, getTime, getIco } from '../utils/data_functions';
 
 const ArticlePage = () => {

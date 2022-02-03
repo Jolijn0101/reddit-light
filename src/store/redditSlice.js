@@ -2,23 +2,14 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import {
   getPopularPosts,
   getSubredditPosts,
-  getSubreddits,
   getSearchReddits,
-} from '../../api/reddit';
+} from '../api/reddit';
 
 export const fetchAsyncReddits = createAsyncThunk(
   'reddits/fetchAsyncReddits',
   async (reddit) => {
     const posts = await getPopularPosts(reddit);
     return posts;
-  }
-);
-
-export const fetchAsyncSubReddits = createAsyncThunk(
-  'reddits/fetchAsyncSubReddits',
-  async (subreddit) => {
-    const subreddits = await getSubreddits(subreddit);
-    return subreddits;
   }
 );
 
@@ -42,9 +33,6 @@ const initialState = {
   reddits: false, //komt een array met reddits
   selectedReddit: {},
   redditsLoading: false,
-
-  subreddits: false, // komt een array met subreddits
-  subRedditsLoading: false,
 };
 
 const redditSlice = createSlice({
@@ -72,18 +60,6 @@ const redditSlice = createSlice({
       return { ...state, reddits: action.payload, redditsLoading: false };
     },
     [fetchAsyncReddits.rejected]: () => {
-      console.log('rejected');
-    },
-    // subreddits
-    [fetchAsyncSubReddits.pending]: (state) => {
-      console.log('Pending');
-      return { ...state, subRedditsLoading: true };
-    },
-    [fetchAsyncSubReddits.fulfilled]: (state, action) => {
-      console.log('Fetched Successfully');
-      return { ...state, subreddits: action.payload, subRedditsLoading: false };
-    },
-    [fetchAsyncSubReddits.rejected]: () => {
       console.log('rejected');
     },
     // search reddits
@@ -118,10 +94,6 @@ export const { removeSelectedReddit, firstConsolelock } = redditSlice.actions;
 export const getAllReddits = (state) => state.reddits.reddits;
 export const getRedditLoading = (state) => state.reddits.redditsLoading;
 export const getSelectedReddit = (state) => state.reddits.selectedReddit;
-
-//export subreddits
-export const getSubReddits = (state) => state.reddits.subreddits;
-export const getSubLoading = (state) => state.reddits.subRedditsLoading;
 
 //export selected reddit
 export const { setSelectedReddit } = redditSlice.actions;

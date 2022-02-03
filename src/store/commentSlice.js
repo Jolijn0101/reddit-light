@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getPostComments } from '../../api/reddit';
+import { getPostComments } from '../api/reddit';
 
 // moet nog in werking stellen in Article page
 export const fetchAsynccomments = createAsyncThunk(

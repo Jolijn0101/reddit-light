@@ -3,11 +3,8 @@ import './SubReddit.css';
 import '../animations/loadingAnimation.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
-import {
-  getSubReddits,
-  fetchAsyncSubRedditPosts,
-  getSubLoading,
-} from '../store/Reddits/redditSlice';
+import { getSubReddits, getSubLoading } from '../store/subredditSlice';
+import { fetchAsyncSubRedditPosts } from '../store/redditSlice';
 import redditlogo from '../images/reddit-logo-16.png';
 
 const SubReddit = () => {

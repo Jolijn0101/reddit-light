@@ -5,7 +5,8 @@ import FaRegArrowAltCircleDown from '../images/arrowDown';
 import { Link } from 'react-router-dom';
 import { validateNum, getTime, getIco } from '../utils/data_functions';
 import { useSelector, useDispatch } from 'react-redux';
-import { getSubReddits, setSelectedReddit } from '../store/Reddits/redditSlice';
+import { setSelectedReddit } from '../store/redditSlice';
+import { getSubReddits } from '../store/subredditSlice';
 
 const Article = (props) => {
   const dispatch = useDispatch();
@@ -15,6 +16,8 @@ const Article = (props) => {
   const Time = getTime(data.created);
   const subreddits = useSelector(getSubReddits);
 
+  console.log(subreddits);
+  console.log(data);
   return (
     <>
       <article>

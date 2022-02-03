@@ -5,10 +5,8 @@ import Articles from '../Articles/Articles';
 import Header from '../Header/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import {
-  fetchAsyncReddits,
-  fetchAsyncSubReddits,
-} from '../store/Reddits/redditSlice';
+import { fetchAsyncReddits } from '../store/redditSlice';
+import { fetchAsyncSubReddits } from '../store/subredditSlice';
 import { useEffect } from 'react';
 
 function App() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Comments.css';
 import '../animations/loadingAnimation.css';
-import { getComments, getCommentsLoading } from '../store/Reddits/commentSlice';
+import { getComments, getCommentsLoading } from '../store/commentSlice';
 import { useSelector } from 'react-redux';
 import { getTime } from '../utils/data_functions';
 
