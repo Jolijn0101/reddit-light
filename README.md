@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Reddit Light
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This webapp was a project of codecademy were I study the Front-end Engineer path. The task was to make a 'lighter' version of de reddit website for learning purposes.
 
-## Available Scripts
+## Wire frames
 
-In the project directory, you can run:
+I made a view wire frames for the project. They give a good over view of the webapp.
 
-### `npm start`
+### mobile wire frames
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<img src="wireframes/wireframe.png"
+     alt="mobile wire frames"
+     style="float: left; margin-right: 10px;" />
+\
+&nbsp;
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### laptop / desktop wire frames
 
-### `npm test`
+<img src="wireframes/wireframelaptop.png"
+     alt="laptop/desktop wire frames"
+     style="float: left; margin-right: 10px;" />
+\
+&nbsp;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies used
 
-### `npm run build`
+This webapp is build with:
+javascript, react version 17.0.2, react-router-dom version 6.2.1, react-redux version 7.2.6,
+html and css.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In this app you can search Reddits in three different ways. On the homepage you see directly the most popular reddits on that moment. In the search field at the top of the webapp you can add a search term to search in all the reddits. the third option is a list of subreddits at the left were you can choose all the reddit in a subreddit. on the homepage you can directly see the reddits with the title, author, likes, in witch subreddit they are, the time they created, awards and the number of the comments. When you click on the reddit you get redirected to a different page with more info about the reddit.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Future work
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In the future I will do things differently. One example is the design of the mobile page. It isn't mobile friendly enough. I made first the design for the laptop / desktop pages and when I tried to shrink the design for mobile use it didn't turn out so well.
+when people have large fingers I don't know if they could navigate properly through the pages. In the future I make first the design for mobile use and then scale it up for laptop/ desktop. I learned a lot from this project and can't wait to make more projects like this in the future.
