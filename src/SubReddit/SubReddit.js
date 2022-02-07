@@ -3,7 +3,11 @@ import './SubReddit.css';
 import '../animations/loadingAnimation.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { getSubReddits, getSubLoading } from '../store/subredditSlice';
+import {
+  getSubReddits,
+  getSubLoading,
+  getErrorSubreddits,
+} from '../store/subredditSlice';
 import { fetchAsyncSubRedditPosts } from '../store/redditSlice';
 import redditlogo from '../images/reddit-logo-16.png';
 
@@ -11,11 +15,18 @@ const SubReddit = () => {
   const dispatch = useDispatch();
   const subreddits = useSelector(getSubReddits);
   const subLoading = useSelector(getSubLoading);
+  const errorsubreddits = useSelector(getErrorSubreddits);
   let navigate = useNavigate();
   return (
     <aside>
-      <h1>SubReddit</h1>
-      <p>Discover more subjects on Reddit!</p>
+      {errorsubreddits ? (
+        <h1>No subreddits available</h1>
+      ) : (
+        <>
+          <h1>SubReddit</h1>
+          <p>Discover more subjects on Reddit!</p>
+        </>
+      )}
       {subLoading || !subreddits ? (
         <div className="loader">
           <span></span>

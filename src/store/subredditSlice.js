@@ -12,6 +12,7 @@ export const fetchAsyncSubReddits = createAsyncThunk(
 const initialState = {
   subreddits: false, // komt een array met subreddits
   subRedditsLoading: false,
+  errorSubreddit: false,
 };
 
 const subredditSlice = createSlice({
@@ -27,8 +28,9 @@ const subredditSlice = createSlice({
       console.log('Fetched Successfully');
       return { ...state, subreddits: action.payload, subRedditsLoading: false };
     },
-    [fetchAsyncSubReddits.rejected]: () => {
+    [fetchAsyncSubReddits.rejected]: (state) => {
       console.log('rejected');
+      return { ...state, errorSubreddit: true };
     },
   },
 });
@@ -36,5 +38,6 @@ const subredditSlice = createSlice({
 //export subreddits
 export const getSubReddits = (state) => state.subreddits.subreddits;
 export const getSubLoading = (state) => state.subreddits.subRedditsLoading;
+export const getErrorSubreddits = (state) => state.subreddits.errorSubreddit;
 
 export default subredditSlice.reducer;

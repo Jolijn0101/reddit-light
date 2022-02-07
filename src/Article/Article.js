@@ -16,8 +16,6 @@ const Article = (props) => {
   const Time = getTime(data.created);
   const subreddits = useSelector(getSubReddits);
 
-  console.log(subreddits);
-  console.log(data);
   return (
     <>
       <article>

@@ -25,11 +25,21 @@ export const getTime = (time) => {
       return days + ' day ago';
     }
     return days + ' days ago';
-  } else {
+  }
+
+  if (hours < 24 && hours !== 0) {
     if (hours < 2) {
       return hours + ' hour ago';
     }
     return hours + ' hours ago';
+  }
+
+  if (hours === 0) {
+    const minutes = date.getMinutes();
+    if (minutes > 2) {
+      return minutes + ' minutes ago';
+    }
+    return minutes + ' minute ago';
   }
 };
 

@@ -33,6 +33,7 @@ const initialState = {
   reddits: false, //komt een array met reddits
   selectedReddit: {},
   redditsLoading: false,
+  errorReddits: false,
 };
 
 const redditSlice = createSlice({
@@ -59,8 +60,9 @@ const redditSlice = createSlice({
       console.log('Fetched Successfully');
       return { ...state, reddits: action.payload, redditsLoading: false };
     },
-    [fetchAsyncReddits.rejected]: () => {
+    [fetchAsyncReddits.rejected]: (state) => {
       console.log('rejected');
+      return { ...state, errorReddits: true };
     },
     // search reddits
     [fetchAsyncSearchReddits.pending]: (state) => {
@@ -71,8 +73,9 @@ const redditSlice = createSlice({
       console.log('Fetched Successfully');
       return { ...state, reddits: action.payload, redditsLoading: false };
     },
-    [fetchAsyncSearchReddits.rejected]: () => {
+    [fetchAsyncSearchReddits.rejected]: (state) => {
       console.log('rejected');
+      return { ...state, errorReddits: true };
     },
     // SubRedditPosts
     [fetchAsyncSubRedditPosts.pending]: (state) => {
@@ -83,8 +86,9 @@ const redditSlice = createSlice({
       console.log('Fetched Successfully');
       return { ...state, reddits: action.payload, redditsLoading: false };
     },
-    [fetchAsyncSubRedditPosts.rejected]: () => {
+    [fetchAsyncSubRedditPosts.rejected]: (state) => {
       console.log('rejected');
+      return { ...state, errorReddits: true };
     },
   },
 });
@@ -94,6 +98,7 @@ export const { removeSelectedReddit, firstConsolelock } = redditSlice.actions;
 export const getAllReddits = (state) => state.reddits.reddits;
 export const getRedditLoading = (state) => state.reddits.redditsLoading;
 export const getSelectedReddit = (state) => state.reddits.selectedReddit;
+export const getErrorReddits = (state) => state.reddits.errorReddits;
 
 //export selected reddit
 export const { setSelectedReddit } = redditSlice.actions;
