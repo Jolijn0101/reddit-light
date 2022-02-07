@@ -27,7 +27,10 @@ const Header = () => {
       <img
         src={reddit_light_logo}
         alt="reddit_light_logo"
-        onClick={() => dispatch(fetchAsyncReddits('popular'))}
+        onClick={() => {
+          dispatch(fetchAsyncReddits('popular'));
+          navigate('/');
+        }}
       />
       <form onSubmit={submitHandler}>
         <button>
