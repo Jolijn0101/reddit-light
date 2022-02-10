@@ -15,22 +15,20 @@ const Articles = () => {
   const errorReddits = useSelector(getErrorReddits);
   return (
     <div id="articles">
-      {errorReddits ? <h1>No Reddits available</h1> : null}
+      {errorReddits === true ? <h1>No Reddits available</h1> : null}
       {reddits.length > 1 && !loading ? (
         reddits.map((reddit, index) => {
           return <Article key={index} data={reddit} />;
         })
       ) : (
         <>
-          {reddits.length > 1 ? (
+          {loading ? (
             <div className="loader">
               <span></span>
               <span></span>
               <span></span>
             </div>
-          ) : (
-            <h1>No reddits found. Try different search term</h1>
-          )}
+          ) : null}
         </>
       )}
     </div>

@@ -54,11 +54,16 @@ const redditSlice = createSlice({
     // reddits
     [fetchAsyncReddits.pending]: (state) => {
       console.log('Pending');
-      return { ...state, redditsLoading: true };
+      return { ...state, redditsLoading: true, errorReddits: false };
     },
     [fetchAsyncReddits.fulfilled]: (state, action) => {
       console.log('Fetched Successfully');
-      return { ...state, reddits: action.payload, redditsLoading: false };
+      return {
+        ...state,
+        reddits: action.payload,
+        redditsLoading: false,
+        errorReddits: false,
+      };
     },
     [fetchAsyncReddits.rejected]: (state) => {
       console.log('rejected');
@@ -67,11 +72,16 @@ const redditSlice = createSlice({
     // search reddits
     [fetchAsyncSearchReddits.pending]: (state) => {
       console.log('Pending');
-      return { ...state, redditsLoading: true };
+      return { ...state, redditsLoading: true, errorReddits: false };
     },
     [fetchAsyncSearchReddits.fulfilled]: (state, action) => {
       console.log('Fetched Successfully');
-      return { ...state, reddits: action.payload, redditsLoading: false };
+      return {
+        ...state,
+        reddits: action.payload,
+        redditsLoading: false,
+        errorReddits: false,
+      };
     },
     [fetchAsyncSearchReddits.rejected]: (state) => {
       console.log('rejected');
@@ -80,11 +90,16 @@ const redditSlice = createSlice({
     // SubRedditPosts
     [fetchAsyncSubRedditPosts.pending]: (state) => {
       console.log('Pending');
-      return { ...state, redditsLoading: true };
+      return { ...state, redditsLoading: true, errorReddits: false };
     },
     [fetchAsyncSubRedditPosts.fulfilled]: (state, action) => {
       console.log('Fetched Successfully');
-      return { ...state, reddits: action.payload, redditsLoading: false };
+      return {
+        ...state,
+        reddits: action.payload,
+        redditsLoading: false,
+        errorReddits: false,
+      };
     },
     [fetchAsyncSubRedditPosts.rejected]: (state) => {
       console.log('rejected');
