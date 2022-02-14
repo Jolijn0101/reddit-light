@@ -23,7 +23,7 @@ function App() {
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<Articles />} />
+          <Route path="/reddit-light/" element={<Articles />} />
           <Route path=":ArticleTitle" element={<ArticlePage />} />
         </Routes>
         <SubReddit />
