@@ -26,7 +26,7 @@ const Article = (props) => {
           {/* arrow down */}
           <FaRegArrowAltCircleDown className="arrow-down" />
         </div>
-        <Link to={'articleID:' + data.id}>
+        <Link to={'/reddit-light/articleID:' + data.id}>
           <div
             className="article-content"
             onClick={() => dispatch(setSelectedReddit(data))}

@@ -41,7 +41,7 @@ const SubReddit = () => {
               key={index}
               onClick={() => {
                 dispatch(fetchAsyncSubRedditPosts(subReddit.display_name));
-                navigate('/');
+                navigate('/reddit-light/');
               }}
             >
               {subReddit.icon_img ? (

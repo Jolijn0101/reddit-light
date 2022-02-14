@@ -19,7 +19,7 @@ const Header = () => {
     if (term === '') return alert('Please enter search term!');
     dispatch(fetchAsyncSearchReddits(term));
     setTerm('');
-    navigate('/');
+    navigate('/reddit-light/');
   };
 
   return (
