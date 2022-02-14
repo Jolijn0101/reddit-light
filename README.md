@@ -1,3 +1,7 @@
+---
+permalink: /index.html
+---
+
 # Reddit Light
 
 This webapp was a project of codecademy were I study the Front-end Engineer path. The task was to make a 'lighter' version of de reddit website for learning purposes.
