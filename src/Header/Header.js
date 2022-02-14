@@ -29,7 +29,7 @@ const Header = () => {
         alt="reddit_light_logo"
         onClick={() => {
           dispatch(fetchAsyncReddits('popular'));
-          navigate('/');
+          navigate('/reddit-light/');
         }}
       />
       <form onSubmit={submitHandler}>

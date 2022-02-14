@@ -32,7 +32,7 @@ const ArticlePage = () => {
         <FaRegArrowAltCircleDown className="arrow-down" />
       </div>
       <div className="article-contentAP">
-        <Link to="/">
+        <Link to="/reddit-light/">
           <h3>← Back to reddits page</h3>
         </Link>
         <div className="headerAP">
