@@ -19,6 +19,7 @@ const SubReddit = () => {
   let navigate = useNavigate();
   return (
     <aside>
+      <h1>dit is een test</h1>
       {errorsubreddits ? (
         <h1>No subreddits available</h1>
       ) : (

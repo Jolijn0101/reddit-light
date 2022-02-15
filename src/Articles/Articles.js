@@ -15,7 +15,6 @@ const Articles = () => {
   const errorReddits = useSelector(getErrorReddits);
   return (
     <div id="articles">
-      <h1>Dit is een test</h1>
       {errorReddits === true ? <h1>No Reddits available</h1> : null}
       {reddits.length > 1 && !loading ? (
         reddits.map((reddit, index) => {
